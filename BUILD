@@ -9,7 +9,7 @@ package(
 licenses(["notice"])  # Apache 2, BSD, MIT
 
 cc_library(
-    name = "sentencepiece_processor_ops",
+    name = "SentencepieceOp",
     srcs = [
         "sentencepiece/tensorflow/sentencepiece_processor_ops.cc"
     ],

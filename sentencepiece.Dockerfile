@@ -98,7 +98,7 @@ RUN set -ex \
 
 COPY BUILD ./BUILD
 RUN cp BUILD tensorflow_serving/custom_ops/sentencepiece_processor/BUILD \
-  && sed -i.bak '/@org_tensorflow\/\/tensorflow\/contrib:contrib_ops_op_lib/a\ "\/\/tensorflow_serving\/custom_ops\/sentencepiece_processor:sentencepiece_processor_ops",' \
+  && sed -i.bak '/@org_tensorflow\/\/tensorflow\/contrib:contrib_ops_op_lib/a\ "\/\/tensorflow_serving\/custom_ops\/sentencepiece_processor:SentencepieceOp",' \
        tensorflow_serving/model_servers/BUILD \
   && sed -i '/name = "tensorflow_model_server",/a\    linkopts = ["-Wl,--allow-multiple-definition", "-Wl,-rpath,/usr/lib"],' \
        tensorflow_serving/model_servers/BUILD
